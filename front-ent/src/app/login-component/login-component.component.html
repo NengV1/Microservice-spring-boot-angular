@@ -1,0 +1,28 @@
+<div class="container col-md-4 col-xl-4 col-sm-10 mt-5">
+    <div class="card-group">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"><h2>Login</h2></h4>
+                <form #loginForm="ngForm" (ngSubmit) = "onLogin(loginForm.value)">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" class="form-control" 
+                        ngModel #usernameInput="ngModel" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control"
+                        ngModel #userpasswordInput="ngModel" required/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Login</button>
+                        <a routerLink="/register" class="btn btn-link">Register</a>
+                    </div>
+                </form>
+            </div>
+        </div>   
+    </div>
+    </div>
+    <ngx-spinner bdColor = "rgba(29,31,24,0.8)" size = "large" color = "#f6d218" type = "pacman" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+    
